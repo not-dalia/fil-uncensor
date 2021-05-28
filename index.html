@@ -37,7 +37,7 @@
 
 <body translate="no">
     <form>
-        <textarea id="kaplan-text" length="1500"></textarea>
+        <textarea id="kaplan-text" length="1500" oninput="kaplan()"></textarea>
         <input type="button" value="Uncensor" onclick="kaplan()" />
         <input type="button" value="Clear" onclick="clearText()" />
         <input type="button" value="Copy" onclick="copyToClipboard()" />
@@ -53,7 +53,6 @@
                 splitText[i] = splitText[i].split('').join('\ufeff');
             }
             var resultText = splitText.join(' ');
-            console.log(resultText)
 
             var result = document.getElementById('result');
             result.value = resultText;
@@ -69,7 +68,7 @@
         function copyToClipboard() {
             console.log('copy')
             const el = document.createElement('textarea');
-            el.value = document.getElementById("result").innerHTML;
+            el.value = document.getElementById("result").value;
             el.setAttribute('readonly', '');
             el.style.position = 'absolute';
             el.style.left = '-9999px';
