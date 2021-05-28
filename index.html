@@ -39,6 +39,7 @@
     <form>
         <textarea id="kaplan-text" length="1500"></textarea>
         <input type="button" value="Uncensor" onclick="kaplan()" />
+        <input type="button" value="Clear" onclick="clearText()" />
         <input type="button" value="Copy" onclick="copyToClipboard()" />
     </form>
     <div class="result-row">
@@ -56,6 +57,13 @@
 
             var result = document.getElementById('result');
             result.innerText = resultText;
+        }
+
+        function clearText() {
+            var text = document.getElementById('kaplan-text');
+            var result = document.getElementById('result');
+            result.value = '';
+            text.value = '';
         }
 
         function copyToClipboard() {
