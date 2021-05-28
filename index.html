@@ -49,7 +49,7 @@
             var text = document.getElementById('kaplan-text').value;
             var splitText = text.split(' ');
             for (var i = 0; i < splitText.length; i++) {
-                splitText[i] = splitText[i].split('').join('\u200b');
+                splitText[i] = splitText[i].split('').join('\ufe    ff');
             }
             var resultText = splitText.join(' ');
             console.log(resultText)
